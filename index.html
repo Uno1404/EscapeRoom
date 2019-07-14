@@ -1,0 +1,152 @@
+<html>
+
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ESCAPE</title>
+    <style>
+      @font-face {
+        font-family: 'title';
+        src: url("BA.ttf") format('truetype');
+      }
+      @font-face {
+        font-family: 'main';
+        src: url("Segoe.ttf") format('truetype');
+      }
+      * {
+        font-family: main;
+        color: #9E9E9E;
+      }
+      body {
+        background: url("room2.jpg") no-repeat center center fixed;
+        background-size: cover;
+      }
+      a.button:link {
+        background-color: #1F1E1E;
+        color: #9E9E9E;
+        font-size: 25px;
+        padding: 15px 25px;
+        border-radius: 15px;
+        text-align: center;
+        text-decoration: none;
+      }
+      a.button:hover {
+        background-color: red;
+      }
+      p {
+        text-align: center;
+      }
+      .central {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
+      .central-2 {
+        position: absolute;
+        left: 50%;
+        top: 90%;
+        transform: translate(-50%, -50%);
+      }
+      .down {
+        position: absolute;
+        left: 50%;
+        top: 120%;
+        transform: translate(-50%, -50%);
+      }
+      .titlename {
+        font-family: title;
+        font-size: 5em;
+        margin: 0;
+      }
+    </style>
+    <script>
+      function transition_1() {
+        var title = document.getElementById("title");
+        var introduction_1 = document.getElementById("introduction_1");
+        title.style.display = "none";
+        introduction_1.style.display = "block";
+      }
+      function transition_2() {
+        var introduction_1 = document.getElementById("introduction_1");
+        var introduction_2 = document.getElementById("introduction_2");
+        introduction_1.style.display = "none";
+        introduction_2.style.display = "block";
+      }
+      function transition_3() {
+        var introduction_2 = document.getElementById("introduction_2");
+        var introduction_3 = document.getElementById("introduction_3");
+        introduction_2.style.display = "none";
+        introduction_3.style.display = "block";
+      }
+      function nein() {
+        document.getElementById("main").remove();
+        var body = document.getElementsByTagName("BODY")[0];
+        var bye = document.createElement("p");
+        body.append(bye);
+        var text = document.createTextNode("Bye Bye");
+        bye.append(text);
+        bye.className = "titlename";
+        body.className = "central";
+        bye.style.color = "red";
+      }
+    </script>
+  </head>
+
+  <body style="background-color:#0E0D0D;">
+    <div id="main">
+      <div id="title" class="central">
+        <p class="titlename" style="color:red;">Escape</p>
+        <p class="titlename" style="color:white;">Psychohouse</p>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div class="central-2">
+          <a href="javascript:void(0)" onclick="transition_1()" class="button">Start</a>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <p class="down" style="color:white;">created by Dilara Sarikaya</p>
+      </div>
+      <div id="introduction_1" style="display:none;" class="central">
+        <p>Hallo mutiger Gamer,</p>
+        <br>
+        <p>das folgende Spiel ist garantiert nichts für schwache Nerven. Wenn du dieses Spiel meistern willst, musst du dir sicher sein, dass du mutig und intelligent bist. Lediglich die besten Individuen schaffen es das Ende zu erreichen. Nachdem du das
+          Spiel begonnen hast, gibt es außer durch das Lösen aller Aufgaben keine Möglichkeit zu entkommen.</p>
+        <br>
+        <div class="down">
+          <a href="javascript:void(0)" onclick="transition_2()" class="button">Okay</a>
+        </div>
+      </div>
+      <div id="introduction_2" style="display:none;" class="central">
+        <p>Bekanntlich kommt Hochmut vor dem Fall. Bist du dir sicher, dass du fortfahren willst?</p>
+        <br>
+        <table class="down">
+          <tr>
+            <th>
+              <a href="javascript:void(0)" onclick="transition_3()" class="button">Ja</a>
+            </th>
+            <th>
+              <a href="javascript:void(0)" onclick="nein()" class="button">Nein</a>
+            </th>
+          </tr>
+        </table>
+      </div>
+      <div id="introduction_3" style="display:none;" class="central">
+        <p>Dein Ziel ist es zu entkommen. Du wirst Hinweise bekommen, die dir dabei helfen werden. Ebenso erzählt dieses Spiel eine Geschichte. Wenn du aufmerksam zuhörst, wird dir am Ende vielleicht ein Licht aufgehen.</p>
+        <br>
+        <div class="down">
+          <a href="javascript:void(0)" onclick="window.location.href='main.html';" class="button">Start</a>
+        </div>
+      </div>
+    </div>
+  </body>
+
+</html>

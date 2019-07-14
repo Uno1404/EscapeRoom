@@ -1,0 +1,35 @@
+﻿Lösung für Rätsel 1:
+  Zunächst müssen den Personen ihre Namen zugeordnet werden. Die benötigten Hinweise findet man im Text über dem Foto.
+  Ernst     Nina      Anna      Nils
+                      Felix     Delia
+  Die fehlende Name ist Nils.
+  Die Ziffern und die Namen passen wie folgt zueinander:
+  Ernst beginnt mit 'E' genauso wie das Wort Eins.
+  Delia beginnt mit 'D' genauso wie das Wort Drei.
+  Felix beginnt mit 'F' genauso wie das Wort Fünf.
+  Anna beginnt mit 'A' genauso wie das Wort Acht.
+  Nina beginnt mit 'N' genauso wie das Wort Neun.
+  Da der Name Nils ebenso wie Nina mit 'N' b eginnt und keine andere Ziffer als Neun mit 'N' beginnt,
+  ist die gesuchte Ziffer 9.
+
+Lösung für Rätsel 2:
+  Das gesuchte Datum ist wie folgt aufgebaut:
+    Der gesuchte Tag ergibt sich aus dem Betrag der Differenz der beiden angegebenen Ziffern.
+    Der gesuchte Monat ergibt sich aus dem Betrag der Summe der beiden angegebenen Ziffern.
+    Also ergibt sich für die Ziffern 8 und 4 der 4.12.
+
+Zwischenergebnis:
+  Die Konkardination der beiden gefundenen Lösungen ergibt 9412.
+
+Lösung für Rätsel 3:
+  Rätsel 3 liefert keine Zahl, sondern gibt einen Hinweis auf eine Rechenoperation,
+  die auf die bereits gefundene Zahl angewandt werden muss.
+  284 ergibt 142 mittels Division mit 2.
+  62 ergibt 31 mittels Division mit 2.
+  28 ergibt 14 mittels Division mit 2.
+  Der Spion antwortet nicht 7, da 14 7 mittels Division mit 2 ergibt, sondern 6 und wird verhaftet.
+  Die gefundene Lösung aus Rätsel 1 und 2 muss also mit 2 dividiert werden, um den richtigen Code zu ergeben.
+
+Code:
+  9412 : 2 = 4706
+  Der Code, der das Schloss öffnet, ist 4706

@@ -1,0 +1,158 @@
+<html>
+
+  <head>
+    <meta charset="utf-8"/>
+    <title>ESCAPE</title>
+    <style>
+      @font-face {
+        font-family: 'main';
+        src: url("Segoe.ttf") format('truetype');
+      }
+      a.button:link {
+        background-color: #1F1E1E;
+        color: #9E9E9E;
+        font-size: 25px;
+        padding: 15px 25px;
+        border-radius: 15px;
+        text-align: center;
+        text-decoration: none;
+      }
+      a.button:hover {
+        background-color: red;
+      }
+      body {
+        font-family: main;
+        color: #9E9E9E;
+        background: url("room1.jpg") no-repeat center center fixed;
+        background-size: cover;
+      }
+    </style>
+    <script>
+      var code = [];
+      var c = 1;
+      function check() {
+        var number = "" + document.getElementById("1").src.substring(document.getElementById("1").src.length - 5, document.getElementById("1").src.length - 4) + document.getElementById("2").src.substring(
+          document.getElementById("2").src.length - 5,
+          document.getElementById("2").src.length - 4
+        ) + document.getElementById("3").src.substring(document.getElementById("3").src.length - 5, document.getElementById("3").src.length - 4) + document.getElementById("4").src.substring(
+          document.getElementById("4").src.length - 5,
+          document.getElementById("4").src.length - 4
+        );
+        if (number == 4706) {
+          document.getElementById("result").innerHTML = "Das Schloss klickt und öffnet sich";
+          document.getElementById("result").style.color = "green";
+          document.getElementById("continue").style.display = "block";
+
+        } else {
+          document.getElementById("result").innerHTML = "Das Schloss öffnet sich nicht";
+          document.getElementById("result").style.color = "red";
+        }
+      }
+      function init() {
+        window.location.href = 'riddle.html';
+      }
+      function adding(i) {
+        if (code.length <= 4) {
+          code.push("" + i);
+          var name = '.\\Icons\\Codebutton\\' + i + '.png';
+          document.getElementById(c).src = name;
+          c++;
+        }
+      };
+    </script>
+  </head>
+
+  <body>
+    <div id="main">
+      <div id="riddle">
+        <table align="center" width="100%">
+          <tr>
+            <th>
+              <a href="javascript:void(0)" onclick=" window.open('./Hinweise/hinweis_1.jpg','_blank')" class="button">Familienfoto</a>
+            </th>
+            <th>
+              <a href="javascript:void(0)" onclick=" window.open('./Hinweise/hinweis_2.jpg','_blank')" class="button">Zeitungsartikel</a>
+            </th>
+            <th>
+              <a href="javascript:void(0)" onclick=" window.open('./Hinweise/hinweis_3.jpg','_blank')" class="button">Geschichte</a>
+            </th>
+          </tr>
+        </table>
+        <br>
+        <br>
+        <br>
+        <table align="center" width="100%">
+          <tr>
+            <th>
+              <img id="1" width="25%" height="50%" src=".\Icons\Codebutton\_.png">
+            </th>
+            <th>
+              <img id="2" width="25%" height="50%" src=".\Icons\Codebutton\_.png">
+            </th>
+            <th>
+              <img id="3" width="25%" height="50%" src=".\Icons\Codebutton\_.png">
+            </th>
+            <th>
+              <img id="4" width="25%" height="50%" src=".\Icons\Codebutton\_.png">
+            </th>
+          </tr>
+        </table>
+        <br>
+        <br>
+        <br>
+        <table align="center" width="100%">
+          <tr>
+            <th>
+              <img onclick="adding(0)" width="60%" height="50%" src=".\Icons\Codebutton\0.png">
+            </th>
+            <th>
+              <img onclick="adding(1)" width="60%" height="50%" src=".\Icons\Codebutton\1.png">
+            </th>
+            <th>
+              <img onclick="adding(2)" width="60%" height="50%" src=".\Icons\Codebutton\2.png">
+            </th>
+            <th>
+              <img onclick="adding(3)" width="60%" height="50%" src=".\Icons\Codebutton\3.png">
+            </th>
+            <th>
+              <img onclick="adding(4)" width="60%" height="50%" src=".\Icons\Codebutton\4.png">
+            </th>
+            <th>
+              <img onclick="adding(5)" width="60%" height="50%" src=".\Icons\Codebutton\5.png">
+            </th>
+            <th>
+              <img onclick="adding(6)" width="60%" height="50%" src=".\Icons\Codebutton\6.png">
+            </th>
+            <th>
+              <img onclick="adding(7)" width="60%" height="50%" src=".\Icons\Codebutton\7.png">
+            </th>
+            <th>
+              <img onclick="adding(8)" width="60%" height="50%" src=".\Icons\Codebutton\8.png">
+            </th>
+            <th>
+              <img onclick="adding(9)" width="60%" height="50%" src=".\Icons\Codebutton\9.png">
+            </th>
+          </tr>
+        </table>
+        <br>
+        <br>
+        <br>
+        <table align="center" width="100%">
+          <tr>
+            <th>
+              <a href="javascript:void(0)" onclick="check()" class="button">Prüfen</a>
+            </th>
+            <th>
+              <a href="javascript:void(0)" onclick="init()" class="button">Reset</a>
+            </th>
+            <th style="display:none;" id="continue">
+              <a href="javascript:void(0)" onclick="window.location.href = 'end.html';" class="button">Weiter</a>
+            </th>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <h3 id="result" align="center"></h3>
+  </body>
+
+</html>

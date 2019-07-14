@@ -1,0 +1,144 @@
+<html>
+
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ESCAPE</title>
+    <style>
+      @font-face {
+        font-family: 'main';
+        src: url("Segoe.ttf") format('truetype');
+      }
+      * {
+        font-family: main;
+        color: #9E9E9E;
+      }
+      #room {
+        background: no-repeat center center fixed;
+        background-size: cover;
+      }
+      p {
+        text-align: center;
+      }
+      p#room_text {
+        background-color: #0E0D0D;
+        padding: 15px 25px;
+        border-radius: 15px;
+      }
+      div.transbox p {
+        color: #9E9E9E;
+      }
+      #main {
+        height: 100%;
+        width: 100%;
+      }
+      .central {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
+      #central-2 {
+        position: absolute;
+        left: 50%;
+        top: 140%;
+        transform: translate(-50%, -50%);
+      }
+      img.main {
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+      }
+      a.button:link {
+        background-color: #1F1E1E;
+        color: #9E9E9E;
+        font-size: 25px;
+        padding: 15px 25px;
+        border-radius: 15px;
+        text-align: center;
+        text-decoration: none;
+      }
+      a.button:hover {
+        background-color: red;
+      }
+      body {
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+      }
+    </style>
+    <script>
+      function roomchange(ort) {
+        var end = document.getElementById("end_1");
+        var room = document.getElementById("room");
+        var text = document.getElementById("room_text");
+        switch (ort) {
+          case 0:
+            document.body.background = 'bathroom.jpg';
+            text.innerHTML = "Du trittst in ein dunkles Bad mit verdreckten Fliesen und einem zersprungenen Waschbecken. Auf dem Boden liegen Tabletten und eine angefangene Klopapierrolle, die ab der Hälfte vollgesogen in einer Pfütze liegt. Der Raum stinkt nach Urin und du nim" +
+                "mst an, dass die Pfütze, die vor deinen Füßen endet, aus Urin besteht. Du beschließt dieses Zimmer wieder zu verlassen.";
+            end.style.display = "none";
+            room.style.display = "block";
+            break;
+          case 1:
+            document.body.background = 'babyroom.jpg';
+            text.innerHTML = "Du betrittst ein Zimmer voller Puppen und altem Spielzeug. Es sieht aus, als wäre dieses Zimmer seit Jahren sich selbst überlassen worden. An den Wänden hängen Vermisstenanzeigen eines kleinen Mädchens, welches Amelie heißt. Du entdeckst zerrissene" +
+                " Familienfotos und Plüschtiere, denen Köpfe fehlen. Du beschließt dieses Zimmer wieder zu verlassen.";
+            end.style.display = "none";
+            room.style.display = "block";
+            break;
+          case 2:
+            alert("Glückwunsch, Amelie! Du bist entkommen!");
+            alert("Klicke 'Ok' für den Trailer von Part 2.");
+            window.location.href = 'https://www.youtube.com/watch?v=dQw4w9WgXcQ';
+            break;
+          case 3:
+            document.body.background = 'bedroom.jpg';
+            text.innerHTML = "Du begehst einen Raum, der nur von einem einzigen moosbewachsenen Fenster mit Licht versorgt wird. Der Raum ist sperrlich eingerichtet. Das Bett scheint allerdings regelmäßig benutzt worden zu sein. Eine Kommode mit offenen Schubladen steht neben d" +
+                "ir, in der du Bilder eines Pärchens findest. Auf der Rückseite stehen Morddrohungen, welche an einen Mann mit dem Namen Nils gerichtet ist. Die Person schreibt auf einem der Fotos ebenfalls, dass ihre Tat vollbracht sei und sie nun ihre Tochter suc" +
+                "he.";
+            end.style.display = "none";
+            room.style.display = "block";
+            break;
+          case 4:
+            document.body.background = 'kitchenroom.jpg';
+            text.innerHTML = "Dies ist definitiv der dreckigste Raum dieser Wohnung. Du entdeckst verschmutztes Geschirr, Käfer und Larven, die sich ihre Nahrung auf dem alten Küchenboden suchen, und einen benutzten Teller mit warmer Lasagne auf der Theke. Diese Lasagne muss vo" +
+                "r kurzem von jemandem gemacht worden sein. Du scheinst nicht alleine in dieser Wohnung zu sein. Mit Schweiß auf der Stirn verlässt du leise das Zimmer.";
+            end.style.display = "none";
+            room.style.display = "block";
+            break;
+        }
+      }
+    </script>
+  </head>
+
+  <body style="background-color:#0E0D0D;">
+    <div id="main">
+      <div id="end_1" class="central">
+        <table align="center" width="100%">
+          <tr>
+            <th>
+              <img onclick="roomchange(0)" class="main" src=".\Icons\Choicebuttons\Bad_Tur.png">
+            </th>
+            <th>
+              <img onclick="roomchange(1)" class="main" src=".\Icons\Choicebuttons\Baby_Tur.png">
+            </th>
+            <th>
+              <img onclick="roomchange(2)" class="main" src=".\Icons\Choicebuttons\Ausgang_Tur.png">
+            </th>
+            <th>
+              <img onclick="roomchange(3)" class="main" src=".\Icons\Choicebuttons\Nils_Tur.png">
+            </th>
+            <th>
+              <img onclick="roomchange(4)" class="main" src=".\Icons\Choicebuttons\Kuche_Tur.png">
+            </th>
+          </tr>
+        </table>
+      </div>
+      <div id="room" style="display:none;" class="central">
+        <p id="room_text"></p>
+        <a href="javascript:void(0)" onclick="window.location.href = 'end_2.html';" id="central-2" class="button">Zurück</a>
+      </div>
+    </div>
+  </body>
+</html>
